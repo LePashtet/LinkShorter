@@ -21,7 +21,7 @@ export default {
 
   created() {
       if (this.$route.params.file) {
-        this.input_val = this.$route.params.file;
+        this.input_val = `s/${this.$route.params.file}`;
         this.editable = false
       }
 
