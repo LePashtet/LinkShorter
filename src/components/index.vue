@@ -10,15 +10,14 @@ import hd from '@/components/header.vue'
 import ft from '@/components/footer.vue'
 import s_input from '@/components/shorten.vue'
 
-
-
-
-
 export default {
   components: {
     hd,
     ft,
     s_input
+  },
+  created() {
+      console.log(this.$route);
   }
 }
 </script>
