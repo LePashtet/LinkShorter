@@ -1,7 +1,7 @@
 <template>
   <div class="ls-wrp">
     <hd></hd>
-    <s_input class="ls-body"></s_input>
+    <s_input class="ls-body" @copy='copyLink'></s_input>
     <ft></ft>
   </div>
 </template>
@@ -16,9 +16,12 @@ export default {
     ft,
     s_input
   },
-  created() {
-      console.log(this.$route);
-  }
+  methods: {
+    copyLink(str) {
+      console.log('sdf');
+      this.$clipboard(str);
+    }
+  },
 }
 </script>
 <style lang="stylus" scoped>

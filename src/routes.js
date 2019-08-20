@@ -11,6 +11,10 @@ export default new VueRouter({
     {
       path: '/:file',
       component: app
+    },
+    {
+      path: '/',
+      component: app
     }
 
 ]})

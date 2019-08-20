@@ -1,5 +1,5 @@
 <template>
-  <button class="ls-shBtn" @click="emit('shorten')" type="button">{{ text }}</button>
+  <button class="ls-shBtn" @click="$emit('shorten')" type="button">{{ text }}</button>
 </template>
 <script>
 export default {
