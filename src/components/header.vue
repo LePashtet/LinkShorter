@@ -1,6 +1,7 @@
 <template>
   <div class="ls-header">
     <div class="ls-header_logo">
+      <img src="@/assets/logo.svg" alt="">
       <h2>LOREM IPSUM</h2>
     </div>
     <div class="ls-header_counter">
@@ -31,12 +32,22 @@ export default {
     align-items: center
 
     &_logo
+      font-size: 17px
+      display: flex;
       color: #66343f
+      align-items: center;
+
+      img
+        margin-right: 15px
+        height: 50px
+        width: auto
     &_counter
+      line-height: 20px 
       display: flex
       flex-direction: column
+      color: #5d2a4a
 
       &:hover
-        color: #66343f
+        color:#4f1f3d
 
 </style>

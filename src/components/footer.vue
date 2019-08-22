@@ -19,7 +19,7 @@ export default {
 <style lang="stylus" scoped>
   .ls-footer
     cursor: pointer
-    padding-bottom: 8%
+    margin-bottom: 5%
     color: #895849
     display: flex
     flex-direction: column

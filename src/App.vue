@@ -23,5 +23,5 @@ export default {
   #app
     font-family: 'Cairo', sans-serif
     background-color: #FBDA61;
-    background-image: linear-gradient(332deg, #FBDA61 0%, #FF5ACD 100%);
+    background-image: linear-gradient(130deg, #FBDA61 20%, #FF5ACD 100%);
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div class="ls-sh" >
     <div class="ls_top">
-      <input v-if="result !== ''" style="cursor:pointer"v-tooltip="'Copy link'" :value="`https://linkshortner/${result}`" @click="$emit('copy',`https://linkshortner/${result}`)"/>
+      <input v-if="result !== ''" style="cursor:pointer; text-align: center;border: 3px solid #FBDA61; background-color: #FEDDDD; width: 200%"v-tooltip="'Copy link'" :value="`lo.em/${result}`" @click="$emit('copy',`lo.em/${result}`); success=true"/>
       <input v-else placeholder="Shorten your link" v-model='input_val'/>
       <btn v-show="result === ''" text='Shorten' @shorten="createLink"></btn>
     </div>
-    <span v-show="result"class="light success">Success! The link has been copied to your clipboard. <span class="bold" @click="clear">One more?</span></span>
+    <span v-show="success" class="light success">Success! The link has been copied to your clipboard. <span class="bold" @click="clear">One more?</span></span>
   </div>
 </template>
 <script>
@@ -20,6 +20,7 @@ export default {
     return {
       input_val: '',
       result: '',
+      success: false
     };
   },
   methods: {
@@ -29,7 +30,7 @@ export default {
     clear(){
         this.result = '';
         this.input_val = '';
-        console.log('f');
+        this.success = false;
     }
   },
   created() {
@@ -43,6 +44,7 @@ export default {
 </script>
 <style lang="stylus">
   .success
+    margin-top: 25px
     cursor: default
     color: #fff
   .light
@@ -52,6 +54,7 @@ export default {
     font-weight: 700
   .ls-sh
     display: flex
+    align-items: center;
     flex-direction: column
     margin:11.5% 30%
   .ls_top
@@ -59,7 +62,7 @@ export default {
     justify-content: space-around;
     align-items: center
     input
-      padding:0 10px
+      padding-left:10px
       outline: none
       height: 38px
       width: 60%
@@ -68,7 +71,7 @@ export default {
       color: #5d2a4a
 
       &:focus
-        outline: 3px solid #FBDA61
+        border: 3px solid #FBDA61
 
 
   .tooltip {
