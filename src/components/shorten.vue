@@ -1,7 +1,9 @@
 <template>
   <div class="ls-sh" >
-    <input v-tooltip="'Copy to clipboard'" @click="$emit('copy',`https://linkshortner/s/${input_val}`)" placeholder="Shorten your link" :readonly='editable === false' v-model='input_val'/>
-    <btn text='Shorten'></btn>
+    <input placeholder="Shorten your link" :readonly='editable === false' v-model='input_val'/>
+    <btn v-if="input_val === ''" text='Shorten'></btn>
+    <btn v-else v-tooltip="'Copy to clipboard'" text='Copy' @shorten="$emit('copy',`https://linkshortner/s/${input_val}`)"></btn>
+
   </div>
 </template>
 <script>
@@ -33,7 +35,6 @@ export default {
   .ls-sh
     margin:11.5% 5%
     input
-      cursor: pointer
       padding:0 10px
       outline: none
       margin-right: 15px
