@@ -37,8 +37,6 @@ export default {
       if (this.$route.params.file) {
         this.result = `s/${this.$route.params.file}`;
       }
-
-
   }
 }
 </script>
@@ -64,7 +62,7 @@ export default {
     input
       padding-left:10px
       outline: none
-      height: 38px
+      height: 30px
       width: 60%
       border: none
       border-radius: 5px
