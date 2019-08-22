@@ -1,9 +1,11 @@
 <template>
   <div class="ls-sh" >
-    <input placeholder="Shorten your link" :readonly='editable === false' v-model='input_val'/>
-    <btn v-if="input_val === ''" text='Shorten'></btn>
-    <btn v-else v-tooltip="'Copy to clipboard'" text='Copy' @shorten="$emit('copy',`https://linkshortner/s/${input_val}`)"></btn>
-
+    <div class="ls_top">
+      <input v-if="result !== ''" style="cursor:pointer"v-tooltip="'Copy link'" :value="`https://linkshortner/${result}`" @click="$emit('copy',`https://linkshortner/${result}`)"/>
+      <input v-else placeholder="Shorten your link" v-model='input_val'/>
+      <btn v-show="result === ''" text='Shorten' @shorten="createLink"></btn>
+    </div>
+    <span v-show="result"class="light success">Success! The link has been copied to your clipboard. <span class="bold" @click="clear">One more?</span></span>
   </div>
 </template>
 <script>
@@ -17,14 +19,22 @@ export default {
   data(){
     return {
       input_val: '',
-      editable: true
+      result: '',
     };
   },
-
+  methods: {
+    createLink() {
+      this.result = `s/${this.input_val}`;
+    },
+    clear(){
+        this.result = '';
+        this.input_val = '';
+        console.log('f');
+    }
+  },
   created() {
       if (this.$route.params.file) {
-        this.input_val = `s/${this.$route.params.file}`;
-        this.editable = false
+        this.result = `s/${this.$route.params.file}`;
       }
 
 
@@ -32,14 +42,27 @@ export default {
 }
 </script>
 <style lang="stylus">
+  .success
+    cursor: default
+    color: #fff
+  .light
+    font-weight: 400
+  .bold
+    cursor: pointer
+    font-weight: 700
   .ls-sh
-    margin:11.5% 5%
+    display: flex
+    flex-direction: column
+    margin:11.5% 30%
+  .ls_top
+    display: flex;
+    justify-content: space-around;
+    align-items: center
     input
       padding:0 10px
       outline: none
-      margin-right: 15px
       height: 38px
-      width: 75%
+      width: 60%
       border: none
       border-radius: 5px
       color: #5d2a4a
