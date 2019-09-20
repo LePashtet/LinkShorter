@@ -3,7 +3,7 @@
     <a href="mailto:s@filecat.net">
       <img @mouseover='hover_img = true' @mouseleave='hover_img = false'  ref='ic' :src="!hover_img ? require('../assets/mail_light.png'): require('../assets/mail_dark.png')" alt="">
     </a>
-    <span>&copy; 2019 Lorem Project Inc.</span>
+    <span>&copy; 2019 Crop.Dog Project Inc.</span>
   </div>
 </template>
 <script>

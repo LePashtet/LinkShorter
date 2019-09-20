@@ -1,17 +1,18 @@
 <template>
-  <div id="app">
+  <div id="app" class="ls-wrp">
     <router-view></router-view>
+    <ft></ft>
   </div>
 </template>
 
 <script>
-import index from '@/components/index.vue'
+import ft from '@/components/footer.vue'
 
 
 export default {
   name: 'app',
   components: {
-    index
+    ft,
   },
 };
 </script>
@@ -24,4 +25,9 @@ export default {
     font-family: 'Cairo', sans-serif
     background-color: #FBDA61;
     background-image: linear-gradient(130deg, #FBDA61 20%, #FF5ACD 100%);
+  .ls-wrp
+    justify-content: space-between
+    display: flex
+    flex-direction: column
+    height: 100vh
 </style>

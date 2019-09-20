@@ -2,7 +2,7 @@
   <div class="ls-header">
     <div class="ls-header_logo">
       <img src="@/assets/logo.svg" alt="">
-      <h2>LOREM IPSUM</h2>
+      <h2>CROP.DOG</h2>
     </div>
     <div class="ls-header_counter">
       <span class='big-font'>210'854</span>
@@ -42,7 +42,7 @@ export default {
         height: 50px
         width: auto
     &_counter
-      line-height: 20px 
+      line-height: 20px
       display: flex
       flex-direction: column
       color: #5d2a4a
