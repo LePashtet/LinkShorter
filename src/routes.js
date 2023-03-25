@@ -1,20 +1,21 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
+import app from '@/components/index.vue';
 
-Vue.use(VueRouter)
-import app from '@/components/index.vue'
+Vue.use(VueRouter);
 
 
 export default new VueRouter({
-  mode:'history',
-  routes:[
+  mode: 'history',
+  routes: [
     {
       path: '/:file',
-      component: app
+      component: app,
     },
     {
       path: '/',
-      component: app
-    }
+      component: app,
+    },
 
-]})
+  ],
+});

@@ -5,18 +5,12 @@
 </template>
 
 <script>
-import index from '@/components/index.vue'
-
-
 export default {
   name: 'app',
-  components: {
-    index
-  },
 };
 </script>
 
-<style lang="stylus">
+<style lang="styl">
   *
     padding: 0
     margin: 0

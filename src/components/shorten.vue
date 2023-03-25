@@ -1,44 +1,52 @@
 <template>
   <div class="ls-sh" >
     <div class="ls_top">
-      <input v-if="result !== ''" style="cursor:pointer; text-align: center;border: 3px solid #FBDA61; background-color: #FEDDDD; width: 200%"v-tooltip="'Copy link'" :value="`lo.em/${result}`" @click="$emit('copy',`lo.em/${result}`); success=true"/>
+      <input
+        v-if="result !== ''"
+        v-tooltip="'Copy link'" :value="`lo.em/${result}`"
+        @click="$emit('copy',`lo.em/${result}`); success=true"/>
       <input v-else placeholder="Shorten your link" v-model='input_val'/>
       <btn v-show="result === ''" text='Shorten' @shorten="createLink"></btn>
     </div>
-    <span v-show="success" class="light success">Success! The link has been copied to your clipboard. <span class="bold" @click="clear">One more?</span></span>
+    <span
+      v-show="success"
+      class="light success">
+      Great! The link has been copied to your clipboard. <span class="bold" @click="clear">One more?
+    </span>
+    </span>
   </div>
 </template>
 <script>
-import btn from '@/components/shorten_btn.vue'
+import btn from '@/components/shorten_btn.vue';
 
 
 export default {
   components: {
-    btn
+    btn,
   },
-  data(){
+  data() {
     return {
       input_val: '',
       result: '',
-      success: false
+      success: false,
     };
   },
   methods: {
     createLink() {
       this.result = `s/${this.input_val}`;
     },
-    clear(){
-        this.result = '';
-        this.input_val = '';
-        this.success = false;
-    }
+    clear() {
+      this.result = '';
+      this.input_val = '';
+      this.success = false;
+    },
   },
   created() {
-      if (this.$route.params.file) {
-        this.result = `s/${this.$route.params.file}`;
-      }
-  }
-}
+    if (this.$route.params.file) {
+      this.result = `s/${this.$route.params.file}`;
+    }
+  },
+};
 </script>
 <style lang="stylus">
   .success
@@ -67,6 +75,11 @@ export default {
       border: none
       border-radius: 5px
       color: #5d2a4a
+      cursor: pointer
+      text-align: center
+      border: 3px solid #FBDA61
+      background-color: #FEDDDD
+      width: 200%
 
       &:focus
         border: 3px solid #FBDA61

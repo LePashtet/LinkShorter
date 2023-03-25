@@ -1,7 +1,12 @@
 <template>
   <div class="ls-footer">
     <a href="mailto:s@filecat.net">
-      <img @mouseover='hover_img = true' @mouseleave='hover_img = false'  ref='ic' :src="!hover_img ? require('../assets/mail_light.png'): require('../assets/mail_dark.png')" alt="">
+      <img
+        @mouseover='hover_img = true'
+        @mouseleave='hover_img = false'
+        ref='ic'
+        :src="!hover_img ? require('../assets/mail_light.png'): require('../assets/mail_dark.png')"
+        alt="">
     </a>
     <span>&copy; 2019 Lorem Project Inc.</span>
   </div>
@@ -9,12 +14,12 @@
 <script>
 
 export default {
-  data(){
+  data() {
     return {
-        hover_img: false
-    }
-  }
-}
+      hover_img: false,
+    };
+  },
+};
 </script>
 <style lang="stylus" scoped>
   .ls-footer

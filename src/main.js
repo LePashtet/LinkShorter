@@ -1,13 +1,13 @@
 import Vue from 'vue';
+import Clipboard from 'v-clipboard';
+import VTooltip from 'v-tooltip';
 import App from './App.vue';
-import router from './routes.js'
-import Clipboard from 'v-clipboard'
+import router from './routes';
 
-Vue.use(Clipboard)
 
-import VTooltip from 'v-tooltip'
+Vue.use(Clipboard);
 
-Vue.use(VTooltip)
+Vue.use(VTooltip);
 
 Vue.config.productionTip = false;
 

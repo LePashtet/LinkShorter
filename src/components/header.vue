@@ -13,7 +13,7 @@
 <script>
 export default {
 
-}
+};
 </script>
 <style lang="stylus" scoped>
   .big-font
@@ -42,7 +42,7 @@ export default {
         height: 50px
         width: auto
     &_counter
-      line-height: 20px 
+      line-height: 20px
       display: flex
       flex-direction: column
       color: #5d2a4a
